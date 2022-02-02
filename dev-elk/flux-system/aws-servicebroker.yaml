@@ -38,6 +38,9 @@ spec:
       vpcid: vpc-0ada2db1e283470e6
       targetaccountid: 546375621904
       bucket: dp-aws-servicebroker-templates
+      key: templates/latest
+      s3region: us-east-1
+      region: us-east-1
   valuesFrom:
     - kind: Secret
       name: aws-sb
