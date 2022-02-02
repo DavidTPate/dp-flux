@@ -1,53 +1,53 @@
-apiVersion: helm.toolkit.fluxcd.io/v2beta1
-kind: HelmRelease
-metadata:
-  name: catalog
-spec:
-  chart:
-    spec:
-      chart: catalog
-      sourceRef:
-        kind: HelmRepository
-        name: svc-cat
-  interval: 1m
-  install:
-    remediation:
-      retries: 3
-  values:
-    namespacedServiceBrokerDisabled: false
----
-apiVersion: helm.toolkit.fluxcd.io/v2beta1
-kind: HelmRelease
-metadata:
-  name: aws-servicebroker
-spec:
-  chart:
-    spec:
-      chart: aws-servicebroker
-      sourceRef:
-        kind: HelmRepository
-        name: aws-sb
-  interval: 1m
-  install:
-    remediation:
-      retries: 3
-  values:
-#    deployNamespacedServiceBroker: true
-    aws:
-      vpcid: vpc-0ada2db1e283470e6
-      targetaccountid: "546375621904"
-#      bucket: dp-aws-servicebroker-templates
-#      key: templates/latest
-#      templateFilter: -main.yaml
-      s3region: us-east-1
-      region: us-east-1
-      tablename: awssb
-  valuesFrom:
-    - kind: Secret
-      name: aws-sb
-      valuesKey: secretkey
-      targetPath: aws.secretkey
-    - kind: Secret
-      name: aws-sb
-      valuesKey: accesskeyid
-      targetPath: aws.accesskeyid
+#apiVersion: helm.toolkit.fluxcd.io/v2beta1
+#kind: HelmRelease
+#metadata:
+#  name: catalog
+#spec:
+#  chart:
+#    spec:
+#      chart: catalog
+#      sourceRef:
+#        kind: HelmRepository
+#        name: svc-cat
+#  interval: 1m
+#  install:
+#    remediation:
+#      retries: 3
+#  values:
+#    namespacedServiceBrokerDisabled: false
+#---
+#apiVersion: helm.toolkit.fluxcd.io/v2beta1
+#kind: HelmRelease
+#metadata:
+#  name: aws-servicebroker
+#spec:
+#  chart:
+#    spec:
+#      chart: aws-servicebroker
+#      sourceRef:
+#        kind: HelmRepository
+#        name: aws-sb
+#  interval: 1m
+#  install:
+#    remediation:
+#      retries: 3
+#  values:
+##    deployNamespacedServiceBroker: true
+#    aws:
+#      vpcid: vpc-0ada2db1e283470e6
+#      targetaccountid: "546375621904"
+##      bucket: dp-aws-servicebroker-templates
+##      key: templates/latest
+##      templateFilter: -main.yaml
+#      s3region: us-east-1
+#      region: us-east-1
+#      tablename: awssb
+#  valuesFrom:
+#    - kind: Secret
+#      name: aws-sb
+#      valuesKey: secretkey
+#      targetPath: aws.secretkey
+#    - kind: Secret
+#      name: aws-sb
+#      valuesKey: accesskeyid
+#      targetPath: aws.accesskeyid
