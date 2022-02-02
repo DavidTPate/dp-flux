@@ -2,7 +2,6 @@ apiVersion: source.toolkit.fluxcd.io/v1beta1
 kind: HelmRepository
 metadata:
   name: svc-cat
-  namespace: aws
 spec:
   interval: 1m
   url: https://kubernetes-sigs.github.io/service-catalog
@@ -11,7 +10,6 @@ apiVersion: source.toolkit.fluxcd.io/v1beta1
 kind: HelmRepository
 metadata:
   name: aws-sb
-  namespace: aws
 spec:
   interval: 1m
   url: https://awsservicebroker.s3.amazonaws.com/charts
