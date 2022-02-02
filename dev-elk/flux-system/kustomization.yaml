@@ -11,3 +11,4 @@ resources:
 - aws-servicebroker.yaml
 - elasticsearch.yaml
 - kibana.yaml
+- aws-infra-examples.yaml
