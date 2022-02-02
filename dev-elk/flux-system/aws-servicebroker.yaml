@@ -1,0 +1,44 @@
+apiVersion: helm.toolkit.fluxcd.io/v2beta1
+kind: HelmRelease
+metadata:
+  name: catalog
+  namespace: aws
+spec:
+  chart:
+    spec:
+      chart: catalog
+      sourceRef:
+        kind: HelmRepository
+        name: svc-cat
+        namespace: aws
+  interval: 60m
+  install:
+    remediation:
+      retries: 3
+---
+apiVersion: helm.toolkit.fluxcd.io/v2beta1
+kind: HelmRelease
+metadata:
+  name: aws-servicebroker
+  namespace: aws
+spec:
+  chart:
+    spec:
+      chart: aws-servicebroker
+      sourceRef:
+        kind: HelmRepository
+        name: aws-sb
+        namespace: aws
+  interval: 1m
+  install:
+    remediation:
+      retries: 3
+  valuesFrom:
+    - kind: Secret
+      name: aws-sb
+      valuesKey: secretkey
+      targetPath: aws.secretkey
+    - kind: Secret
+      name: aws-sb
+      valuesKey: accesskeyid
+      targetPath: aws.accesskeyid

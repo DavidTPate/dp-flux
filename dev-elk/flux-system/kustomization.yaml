@@ -4,3 +4,10 @@ kind: Kustomization
 resources:
 - gotk-sync.yaml
 - gotk-components.yaml
+- namespaces.yaml
+- helm-repos.yaml
+- eck-crds.yaml
+- eck.yaml
+- aws-servicebroker.yaml
+- elasticsearch.yaml
+- kibana.yaml
