@@ -34,6 +34,7 @@ spec:
     remediation:
       retries: 3
   values:
+    deployNamespacedServiceBroker: true
     aws:
       vpcid: vpc-0ada2db1e283470e6
       targetaccountid: "546375621904"
