@@ -13,8 +13,8 @@ spec:
   install:
     remediation:
       retries: 3
-  values:
-    namespacedServiceBrokerDisabled: false
+#  values:
+#    namespacedServiceBrokerDisabled: false
 ---
 apiVersion: helm.toolkit.fluxcd.io/v2beta1
 kind: HelmRelease
