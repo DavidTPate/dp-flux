@@ -4,7 +4,7 @@ metadata:
   name: svc-cat
   namespace: aws
 spec:
-  interval: 60m
+  interval: 1m
   url: https://kubernetes-sigs.github.io/service-catalog
 ---
 apiVersion: source.toolkit.fluxcd.io/v1beta1
@@ -13,5 +13,5 @@ metadata:
   name: aws-sb
   namespace: aws
 spec:
-  interval: 60m
+  interval: 1m
   url: https://awsservicebroker.s3.amazonaws.com/charts
