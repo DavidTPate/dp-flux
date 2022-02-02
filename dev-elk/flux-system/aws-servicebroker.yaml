@@ -49,11 +49,9 @@ spec:
   valuesFrom:
     - kind: Secret
       name: aws-sb
-      namespace: default
       valuesKey: secretkey
       targetPath: aws.secretkey
     - kind: Secret
       name: aws-sb
-      namespace: default
       valuesKey: accesskeyid
       targetPath: aws.accesskeyid
