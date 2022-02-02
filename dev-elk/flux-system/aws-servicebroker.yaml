@@ -42,7 +42,7 @@ spec:
 #      templateFilter: -main.yaml
       s3region: us-east-1
       region: us-east-1
-      tablename: aws-sb
+      tablename: awssb
   valuesFrom:
     - kind: Secret
       name: aws-sb
