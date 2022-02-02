@@ -17,6 +17,22 @@ spec:
 apiVersion: servicecatalog.k8s.io/v1beta1
 kind: ServiceInstance
 metadata:
+  name: s3-custom-example-bucket-elasticsearch
+spec:
+  clusterServiceClassExternalName: s3-example
+  clusterServicePlanExternalName: production
+  parameters:
+    BucketName: dp-s3-elasticsearch
+    EnableLogging: False
+    EnableGlacierLifeCycle: False
+    GlacierLifeCycleTransitionInDays: 0
+    EnableVersioning: False
+    BucketAccessControl: Private
+    PreventDeletion: False
+---
+apiVersion: servicecatalog.k8s.io/v1beta1
+kind: ServiceInstance
+metadata:
   name: sqs-example
 spec:
   clusterServiceClassExternalName: sqs
