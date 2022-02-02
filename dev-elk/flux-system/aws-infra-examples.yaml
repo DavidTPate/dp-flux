@@ -4,7 +4,7 @@ metadata:
   name: s3-example-bucket-elasticsearch
 spec:
   clusterServiceClassExternalName: s3
-  clusterServicePlanExternalName: dev
+  clusterServicePlanExternalName: production
   parameters:
     BucketName: dp-s3-elasticsearch
     EnableLogging: False
