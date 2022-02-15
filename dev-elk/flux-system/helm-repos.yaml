@@ -15,3 +15,12 @@ metadata:
 spec:
   interval: 1m
   url: https://awsservicebroker.s3.amazonaws.com/charts
+---
+apiVersion: source.toolkit.fluxcd.io/v1beta1
+kind: HelmRepository
+metadata:
+  name: aws-efs-csi-driver
+  namespace: default
+spec:
+  interval: 1m
+  url: https://kubernetes-sigs.github.io/aws-efs-csi-driver/
